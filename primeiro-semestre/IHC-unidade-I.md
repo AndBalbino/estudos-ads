@@ -244,7 +244,21 @@ Ao trabalhar com cenários, a equipe de design consegue discutir e fazer uma an�
 Na parte da análise são gerados diversos cenários e seu refinamento é feito até atingir a história ideal, para então passar para uma fase de projeto, onde é feito um planejamento de como transformar aquele cenário em produto. A parte final é a produção deste protótipo de produto e sua avaliação com os usuários para aferir a qualidade na nova solução. 
 Um benefício muito grande que pode trazer essa técnica de cenários, é que o designer consegue compreender realmente como os usuários realizam as suas tarefas diárias e algumas vezes não é a melhor forma de serem realizadas. Assim, em vez de propor uma solução que seja para informatizar a ação exatamente da mesma forma que o usuário já realiza, o designer propõe uma solução baseada na forma ideal de realizar tal operação, buscando agregar mais usabilidade à intervenção realizada. 
 
+ ## 8. IHC Multidisciplinar:
  
+ A Interface Humano Computador tem suas técnicas embasadas em outras áreas, pois é uma disciplina que faz uma ponte entre áreas das ciências exatas (os sistemas computacionais) quanto com os aspectos humanos, psicológicos e comportamentais dos indivíduos, levando em conta todo o aspecto social das pessoas que vão utilizá-lo. 
+A IHC é a área da computação que mais se apropria de conhecimentos e métodos das outras. Isso é causado pelo fato que a literatura da nossa área, está ligada com aspectos do comportamento humano. Assim, usamos materiais além da Computação, de: Psicologia Cognitiva, Psicologia Organizacional e Social, Ergonomia e Fatores Humanos, Engenharia, design, Antropologia, Sociologia, Filosofia, Linguística e Inteligência Artificial. 
+
+O exemplo mais claro quando falamos da multidisciplinaridade da IHC é o uso da Psicologia, que usa extensamente entrevistas para ter acesso à concepções, emoções e subjetividade das pessoas (BARBOSA; SILVA, 2010). Em IHC também utilizamos entrevista para compreender um domínio, o que as pessoas acham sobre determinado sistema e principalmente o que acontece durante a experiência de uso para avaliar a qualidade da interface do usuário.
+O desenvolvimento de projetos com apoio de profissionais de diversas áreas gera ótimos resultados, principalmente com o enriquecimento de ideias, ganhos de criatividade e muitas soluções. Isso é um ponto importante para o sucesso do trabalho, pois uma análise bem estruturada é o pontapé inicial para a concepção de um sistema com qualidade. Geralmente não é possível empregar uma equipe assim, e então uma boa solução é uma equipe heterogênea contando com diversos profissionais da área da computação, como: analistas, designers, engenheiros, programadores.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/213318206-b5359c6d-d3d5-4327-8f6f-c1424365a700.png" width= "500px" />
+</div>
+
+
+
 **Conceitos importantes:** 
 
 *“Affordance é quando se olha para um objeto e tem a noção do que ele faz e como ele é utilizado, sem precisar rótulos ou instruções, É dever do designer fazer com que a affordance seja facilmente percebida, tornando de fácil entendimento a finalidade dos elementos, a fim de facilitar o uso.”*
