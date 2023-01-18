@@ -179,9 +179,22 @@ Use recursos visuais para auxiliar os usuários.
 
 - O maior erro na construção de um software é dar somente importância para a parte interna de um software e pensar em tudo que o sistema deve possuir para funcionar. Se não der nenhuma atenção de como esse sistema será utilizado, a chance de fracasso é extremamente grande. 
 
+ ## 1. IHC Multidisciplinar:
+ 
+ A Interface Humano Computador tem suas técnicas embasadas em outras áreas, pois é uma disciplina que faz uma ponte entre áreas das ciências exatas (os sistemas computacionais) quanto com os aspectos humanos, psicológicos e comportamentais dos indivíduos, levando em conta todo o aspecto social das pessoas que vão utilizá-lo. 
+A IHC é a área da computação que mais se apropria de conhecimentos e métodos das outras. Isso é causado pelo fato que a literatura da nossa área, está ligada com aspectos do comportamento humano. Assim, usamos materiais além da Computação, de: Psicologia Cognitiva, Psicologia Organizacional e Social, Ergonomia e Fatores Humanos, Engenharia, design, Antropologia, Sociologia, Filosofia, Linguística e Inteligência Artificial. 
+
+O exemplo mais claro quando falamos da multidisciplinaridade da IHC é o uso da Psicologia, que usa extensamente entrevistas para ter acesso à concepções, emoções e subjetividade das pessoas (BARBOSA; SILVA, 2010). Em IHC também utilizamos entrevista para compreender um domínio, o que as pessoas acham sobre determinado sistema e principalmente o que acontece durante a experiência de uso para avaliar a qualidade da interface do usuário.
+O desenvolvimento de projetos com apoio de profissionais de diversas áreas gera ótimos resultados, principalmente com o enriquecimento de ideias, ganhos de criatividade e muitas soluções. Isso é um ponto importante para o sucesso do trabalho, pois uma análise bem estruturada é o pontapé inicial para a concepção de um sistema com qualidade. Geralmente não é possível empregar uma equipe assim, e então uma boa solução é uma equipe heterogênea contando com diversos profissionais da área da computação, como: analistas, designers, engenheiros, programadores.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/213318206-b5359c6d-d3d5-4327-8f6f-c1424365a700.png" width= "500px" />
+</div>
+
  
 
-## 1. Benefícios de IHC 
+## 2. Benefícios de IHC 
 
 - Aumento da produtividade dos usuários, quando a interação é eficiente, os usuários chegam facilmente aos seus objetivos; 
 - Os erros são reduzidos significativamente, tanto em número e gravidade. Com este estudo fica mais claro prever as consequências das ações erradas e planejar as respostas dos sistemas para dar oportunidade de recuperação quando um erro ocorre; 
@@ -198,11 +211,11 @@ Interação e interface: A interação está voltada para as habilidades que o u
 Podemos então, definir interação como o momento em que o usuário está em contato com um sistema interativo, sendo a interface, a parte física do sistema, que conecta o usuário com a máquina.   
 
 
-## 2. Percepção das cores: 
+## 3. Percepção das cores: 
 
 Nunca utilizar mais que sete cores em uma mesma tela, pois muito colorido atrapalha a percepção dos usuários. Deve-se ter muito cuidado na utilização das cores em interfaces, elas direcionam a atenção do usuário, fazendo com que se identifique os processos, chegando a reduzir significativamente a quantidade de erros, tornando os detalhes da interface claro e de fácil memorização. Para quem for projetar interfaces, um estudo sobre o que cada cor causa nas pessoas é extremamente recomendado. Para quem for projetar interfaces, um estudo sobre o que cada cor causa nas pessoas é extremamente recomendado. 
  
-## 3. Princípios do designer:  
+## 4. Princípios do design:  
 
 #### A atividade de design é constantemente separada em três etapas: 
 
@@ -218,7 +231,7 @@ A avaliação da intervenção é para verificar o que modifica na situação at
 
  
 
-## 4. Usabilidade: 
+## 5. Usabilidade: 
 
 Usabilidade pode ser definida como o grau de facilidade com que o usuário consegue interagir com determinada interface. A usabilidade é o conceito mais conhecido e está ligado com a fácil utilização do sistema interativo pelo usuário e sua satisfação durante o uso. A experiência do usuário é bem próxima das características de usabilidade, porém está mais ligada com sentimentos e emoções dos usuários. 
 A eficácia é quando os usuários de um sistema computacional conseguem atingir os seus objetivos corretamente e eficiência é quando estes usuários atingem seus objetivos da melhor forma possível, consumindo menos recursos e em menos tempo. Outro ponto que nunca pode ser esquecido na usabilidade é a satisfação dos usuários ao interagirem com um determinado software. 
@@ -228,35 +241,21 @@ A facilidade no aprendizado está ligada ao tempo gasto para que o usuário cons
 Eficiência é exatamente o tempo necessário para se concluir uma atividade, e a segurança é o nível de proteção que o sistema oferece em condições críticas. Por fim, a satisfação é uma avaliação subjetiva que o sistema causa nas emoções e sentimentos dos usuários. 
 
 
-## 5. Acessibilidade: 
+## 6. Acessibilidade: 
 
 Acessibilidade é considerada, muitas vezes, o mais importante dentre todos os critérios de qualidade, é definida pelo sistema computacional que não tem barreiras que dificultem a interação do usuário com o sistema, quer esse usuário tenha alguma necessidade em especial, ou não. Fazendo uma analogia com o mundo real, da mesma forma que não pode existir escadas em locais de acesso para cadeirantes, um sistema computacional não pode ter barreiras. 
 
-## 6. Comunicabilidade:  
+## 7. Comunicabilidade:  
 
 Comunicabilidade está relacionado na forma de comunicação entre o designer projetista do sistema e o usuário. Se essa comunicação for feita de forma adequada, o usuário será capaz de interagir plenamente com o sistema. 
 Deve garantir que o usuário consiga prever e compreender o que fazer no sistema para realizar tarefas sozinho, com eficiência, facilidade e com uma comunicação em mão dupla entre usuário e sistema 
  
-## 7. Design baseado em cenários: 
+## 8. Design baseado em cenários: 
 
 Uma técnica muito interessante de design é a baseada em cenários. Podemos definir cenários como uma história sobre pessoas executando uma determinada atividade. Estes cenários são descritos usando linguagem natural e tem por objetivo a participação de todas as partes envolvidas na elaboração contribuindo para as decisões direta ou indiretamente. 
 Ao trabalhar com cenários, a equipe de design consegue discutir e fazer uma análise das atividades realizadas pelos usuários e qual o grau de impacto da tecnologia já existente nas mesmas, além de prever como seriam afetadas em uma nova solução. O uso de cenários é uma técnica muito útil e barata onde o designer pode gerar diversas ideias de solução. 
 Na parte da análise são gerados diversos cenários e seu refinamento é feito até atingir a história ideal, para então passar para uma fase de projeto, onde é feito um planejamento de como transformar aquele cenário em produto. A parte final é a produção deste protótipo de produto e sua avaliação com os usuários para aferir a qualidade na nova solução. 
 Um benefício muito grande que pode trazer essa técnica de cenários, é que o designer consegue compreender realmente como os usuários realizam as suas tarefas diárias e algumas vezes não é a melhor forma de serem realizadas. Assim, em vez de propor uma solução que seja para informatizar a ação exatamente da mesma forma que o usuário já realiza, o designer propõe uma solução baseada na forma ideal de realizar tal operação, buscando agregar mais usabilidade à intervenção realizada. 
-
- ## 8. IHC Multidisciplinar:
- 
- A Interface Humano Computador tem suas técnicas embasadas em outras áreas, pois é uma disciplina que faz uma ponte entre áreas das ciências exatas (os sistemas computacionais) quanto com os aspectos humanos, psicológicos e comportamentais dos indivíduos, levando em conta todo o aspecto social das pessoas que vão utilizá-lo. 
-A IHC é a área da computação que mais se apropria de conhecimentos e métodos das outras. Isso é causado pelo fato que a literatura da nossa área, está ligada com aspectos do comportamento humano. Assim, usamos materiais além da Computação, de: Psicologia Cognitiva, Psicologia Organizacional e Social, Ergonomia e Fatores Humanos, Engenharia, design, Antropologia, Sociologia, Filosofia, Linguística e Inteligência Artificial. 
-
-O exemplo mais claro quando falamos da multidisciplinaridade da IHC é o uso da Psicologia, que usa extensamente entrevistas para ter acesso à concepções, emoções e subjetividade das pessoas (BARBOSA; SILVA, 2010). Em IHC também utilizamos entrevista para compreender um domínio, o que as pessoas acham sobre determinado sistema e principalmente o que acontece durante a experiência de uso para avaliar a qualidade da interface do usuário.
-O desenvolvimento de projetos com apoio de profissionais de diversas áreas gera ótimos resultados, principalmente com o enriquecimento de ideias, ganhos de criatividade e muitas soluções. Isso é um ponto importante para o sucesso do trabalho, pois uma análise bem estruturada é o pontapé inicial para a concepção de um sistema com qualidade. Geralmente não é possível empregar uma equipe assim, e então uma boa solução é uma equipe heterogênea contando com diversos profissionais da área da computação, como: analistas, designers, engenheiros, programadores.
-
-</span>
-<div align-"center">
-<img src="https://user-images.githubusercontent.com/113153237/213318206-b5359c6d-d3d5-4327-8f6f-c1424365a700.png" width= "500px" />
-</div>
-
 
 
 **Conceitos importantes:** 
