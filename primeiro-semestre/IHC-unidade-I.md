@@ -210,7 +210,7 @@ Nunca utilizar mais que sete cores em uma mesma tela, pois muito colorido atrapa
 
 2. Síntese da Intervenção: definir e implementar uma intervenção sobre a situação; 
 
-3 .Avaliação da Nova Situação: estudar os efeitos causados pela intervenção, fazendo um comparativo entre a situação anterior e a nova. 
+3. Avaliação da Nova Situação: estudar os efeitos causados pela intervenção, fazendo um comparativo entre a situação anterior e a nova. 
 
 Quando pensamos na análise da situação que envolve artefatos computacionais, precisamos não pensar somente em tecnologia, mas em todos os elementos envolvidos no processo, como: usuários com suas características e preferências, as funções executadas em questão pelos sistemas já existentes, a perspectiva de uso ao longo do tempo e principalmente o cliente e o desenvolvedor. Basicamente, a análise aponta as necessidades e oportunidades para que se possa planejar e executar uma intervenção. 
 A intervenção é o fruto da análise e vai modificar de alguma forma algo que já está acontecendo, é a resposta de como melhorar uma situação já existente e envolve todas as pessoas que estavam envolvidas durante a análise. É necessária muita atenção com o tamanho do impacto que esta solução pode causar na qualidade de uso e na vida dos usuários. 
