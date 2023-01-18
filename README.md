@@ -1,4 +1,4 @@
-# Guida de estudos 
+# Guia de estudos 
 </span>
 
 <div align-"center">
