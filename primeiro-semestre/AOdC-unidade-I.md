@@ -206,6 +206,58 @@ Quanto à memória, algumas técnicas poderão ser utilizadas para diminuir a di
 Além dos investimentos dos sistemas de memória, barramentos e dispositivos de E/S, muito se tem investido para se ter processadores cada vez mais poderosos e eficientes, principalmente para aumentar o fator de integração de seus componentes (em nível de transistores) ou seja, na adoção de técnicas de processamento mais agressivas.
 
 ### Pipeline e superescalaridade:
-Pipeline e superescalaridade são técnicas, baseadas na execução paralela das instruções, que **visam o aumento da performance dos sistemas computacionais.**
+Pipeline e superescalaridade são técnicas, baseadas na execução paralela dPara finalizar, devemos saber que, além de implementar a técnica de pipeline, um processador pode ser, também, superescalar. A superescalaridade consiste em se replicar unidades funcionais de processamento para que se possa processar duas ou mais instruções simultaneamente, ou seja, de forma paralela.as instruções, que **visam o aumento da performance dos sistemas computacionais.**
 
-O ponto chave do **pipeline é tentar antecipar o início da próxima instrução.** Mas, como fazer isso? Para começar, vamos falar que, para se alcançar um melhor resultado, uma instrução pode ser decomposta em várias microinstruções (STALLINGS, 2010). Para uma melhor abstração, vamos imaginar uma sequência para calcular a ação de um jogador no futebol de robôs, composta de quatro etapas:
+O ponto chave do **pipeline é tentar antecipar o início da próxima instrução.** Diminuir o tempo e as etapdas.
+
+Para finalizar, devemos saber que, além de implementar a técnica de pipeline, um processador pode ser, também, superescalar. **A superescalaridade consiste em se replicar unidades funcionais de processamento para que se possa processar duas ou mais instruções simultaneamente, ou seja, de forma paralela.**
+
+## 4. Evolução das arqquiteturas
+Atualmente, o cenário mundial dos processadores está polarizado entre dois mercados: o representado pelos computadores pessoais e o representado pelos sistemas embarcados (também chamados por sistemas embutidos).
+
+No âmbito dos computadores pessoais, encontramos computadores baseados em processadores da família x86 e, em relação aos sistemas embarcados, processadores ARM (Advanced RISC Machine).
+
+### Intel x86:
+A família x86 é muito importância para o mundo dos sistemas computacionais, não somente pela sua ampla utilização mas, também, por implantar vários aspectos tecnológicos nos projetos de seus processadores.
+Durante a evolução da família x86, podemos destacar os pontos principais (STALLINGS, 2010):
+
+ 
+
+- 8080:  primeiro microprocessador de uso geral; caminho de dados de 8 bits;
+- 8086: contém 29 mil transistores; 16 bits; cache de instruções (pré-busca das instruções);
+- 80386: suporte para multitarefa; 32 bits;
+- 80486: cache evoluída para dados e instruções; presença de pipeline; coprocessador matemático embutido;
+- Pentium: organização superescalar;
+- Pentium Pro: superescalaridade aumentada; renomeamento de registradores; previsão de desvio; execução especulativa;
+- Pentium II: incorporação de tecnologia MMX (para manipulação de informações multimídia);
+- Core: primeiro x86 com dual core;
+- Core 2: arquitetura de 64 bits;
+- Core 2 Quad: 820 milhões de transistores; quatro processadores no chip.
+
+Atualmente, novas pesquisas vem sendo desenvolvidas para que ataque, de forma ainda mais agressiva, o paralelismo internamente ao processador. Processadores com mais núcleos (tanto físicos quanto virtuais) estão sendo lançados no mercado, possibilitando o paralelismo em vários níveis de abstração.
+
+### Sistemas embarcados e ARM:
+Os sistemas embarcados são geralmente projetados para serem compactos, confiáveis e eficientes em termos de energia. Eles também precisam ser capazes de lidar com restrições de espaço e recursos, como memória e processamento limitados.
+
+Um sistema embarcado é aquele que apresenta a combinação entre software e hardware, para executar um objetivo dedicado. Geralmente falamos que um sistema computacional é dedicado, quando ele desempenha apenas um tipo de funcionalidade, por exemplo, controlar um dispositivo tendo em vista os dados coletados por meio de sensoriamento. Aos sistemas embarcados, geralmente associamos condições limites como: 
+
+- pequena quantidade de memória disponível para conter o programa e suas variáveis;
+- limitação na dissipação de potência e, portanto, no consumo de energia;
+- condições ambientais agressivas, como vibrações, altas amplitudes térmicas;
+- geralmente associados com manipulação de sinais analógicos provenientes de sensores e interfaceados por conversores A/D (analógico-digital) e enviados para atuadores - por intermédio de conversores D/A (digital-analógico);
+- não se limita a um processador por sistema embarcado: um único sistema embarcado pode conter, além do processador, outros elementos de processamento, tais como: DSP (Digital Signal Processor), FPGA (Field Programmable Gate Array) e circuitos do tipo ASIC (Application Specific Integrated Circuit).
+
+ Funcionalidades que podemos encontrar nos sistemas embarcados.
+ 
+ </span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/219205978-77f4b285-685d-4acb-9b30-d0aa9eb2457d.png" width= "500px" />
+</div>
+
+Sabemos que grande parte dos sistemas embarcados é equipada com processadores ARM, então, vamos conhecer algumas de suas características básicas (STALLINGS, 2010):
+
+- projetado pela ARM Inc., Cambridge, Inglaterra. Projetos posteriores feitos em conjunto entre a Acorn, Apple, VLSI Technology. Atualmente, processadores ARM licenciados para que sejam construídos por diversas empresas, como Cirrus Logic, Texas Instruments, ATMEL, Samsung, Nvidia, Sharp, Qualcomm;
+- alta velocidade, baixos requisitos de potência;
+- encontrado em PDAs, jogos portáteis, telefones, freios ABS e aplicações que envolvem tempo real;
+- suporta sistemas operacionais como Linux, Linux, Palm OS, Symbian OS, Windows Mobile.
+
