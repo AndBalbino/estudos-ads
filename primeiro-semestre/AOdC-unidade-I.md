@@ -261,3 +261,5 @@ Sabemos que grande parte dos sistemas embarcados é equipada com processadores A
 - encontrado em PDAs, jogos portáteis, telefones, freios ABS e aplicações que envolvem tempo real;
 - suporta sistemas operacionais como Linux, Linux, Palm OS, Symbian OS, Windows Mobile.
 
+**Processamento paralelo é uma fomra mais eficiente de trabalhar as informações que tem ênfase na exploração de eventos simultâneos na execução de um programa.**
+
