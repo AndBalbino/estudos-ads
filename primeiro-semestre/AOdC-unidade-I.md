@@ -212,7 +212,7 @@ O ponto chave do **pipeline é tentar antecipar o início da próxima instruçã
 
 Para finalizar, devemos saber que, além de implementar a técnica de pipeline, um processador pode ser, também, superescalar. **A superescalaridade consiste em se replicar unidades funcionais de processamento para que se possa processar duas ou mais instruções simultaneamente, ou seja, de forma paralela.**
 
-## 4. Evolução das arqquiteturas
+## 4. Evolução das arquiteturas
 Atualmente, o cenário mundial dos processadores está polarizado entre dois mercados: o representado pelos computadores pessoais e o representado pelos sistemas embarcados (também chamados por sistemas embutidos).
 
 No âmbito dos computadores pessoais, encontramos computadores baseados em processadores da família x86 e, em relação aos sistemas embarcados, processadores ARM (Advanced RISC Machine).
