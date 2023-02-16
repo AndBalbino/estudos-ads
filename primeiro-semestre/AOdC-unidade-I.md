@@ -263,3 +263,7 @@ Sabemos que grande parte dos sistemas embarcados é equipada com processadores A
 
 **Processamento paralelo é uma fomra mais eficiente de trabalhar as informações que tem ênfase na exploração de eventos simultâneos na execução de um programa.**
 
+### Cálculo de números binários para decimal:
+Para efetuar a conversão de um número binário para decimal é preciso dividir cada número por 2 até obter 1 como resto de todas as divisões possíveis. 
+Para efetuar a conversão de decimal para binário é preciso multiplicar cada número por 2 elevado a determinado expoente em ordem crescente. Depois somar os números. 
+
