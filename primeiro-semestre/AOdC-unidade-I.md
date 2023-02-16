@@ -1,7 +1,8 @@
 # Arquitetura e organização de computadores
 
-[Tabela ASCII](https://web.fe.up.pt/~ee96100/projecto/Tabela%20ascii.htm)
-[Arquitetura e organização de computadores](https://www.youtube.com/watch?v=T91EcagcyMo&list=PLBDa-mHKKeHTQpf6L0fuXw1ffwyacGiLR)
+[Tabela ASCII](https://web.fe.up.pt/~ee96100/projecto/Tabela%20ascii.htm).
+
+[Arquitetura e organização de computadores](https://www.youtube.com/watch?v=T91EcagcyMo&list=PLBDa-mHKKeHTQpf6L0fuXw1ffwyacGiLR).
 
 ## 1. Visão geral da arquitetura e organização de computadores 
 Esse tópico ajudará você a encontrar a resposta, ao compreender os detalhes mais evidentes para um programador, em relação à construção do processador, e aqueles que não são muito importantes, pelo menos, a princípio. Apesar de menos importantes, esses detalhes devem ser de conhecimento do programador, em algumas situações, para que se possa alcançar um nível maior de eficiência computacional, diminuindo-se o tempo de processamento pela otimização de seu código para um processador específico.
