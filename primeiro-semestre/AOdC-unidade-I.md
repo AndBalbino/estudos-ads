@@ -83,7 +83,7 @@ Com a miniaturização do componentes, foi possível construir circuitos mais co
 Além dos fatores físicos, novas técnicas de processamento, como o emprego de *pipeline, superescalaridade e execução fora de ordem,* vem permitindo o aumento da performance de processamento.
 
 Link últil:
-[Arquiterura de computadores](https://hackmd.io/@LgylPq9nR6OL7AtZ--WGhg/rJ891X6Ad)
+[Arquitetura de computadores](https://hackmd.io/@LgylPq9nR6OL7AtZ--WGhg/rJ891X6Ad)
 
 ### Primeira geração: 
 Essa geração foi marcada pelo emprego das válvulas termiônicas em sua construção. O pioneiro dos computadores foi o ENIAC *(Electronic Numerical Integrator and Computer),* construído entre os anos de 1943 e 1946 pela Universidade da Pensilvânia pelo físico John Mauchly e pelo engenheiro John Eckert.
