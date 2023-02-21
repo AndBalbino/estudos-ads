@@ -16,14 +16,14 @@ Diante da herança frente ao modelo de von Neumann (TANENBAUM, 2013), pode-se di
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220212078-f209a234-645e-4fd2-b045-8eeecef05f89.png" width= "500px" />
-</div
+</div>
 
 ### Hierarquia das memórias 
 
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220212854-5b851030-b9eb-4822-ba92-fd76e1fc24ef.png" width= "500px" />
-</div
+</div>
 
 Além dos módulos em si, precisamos ter em mente que, para que eles atuem, é necessária toda uma sincronização de trabalho. **Essa sincronização é atingida pela geração de sinais de controle, os quais estão presentes dentro do processador para que este possa executar as instruções, e, também, estão presentes nos demais módulos que integram o computador.**
 
@@ -34,7 +34,7 @@ A figura a seguir ilustra os módulos e a sua interconexão.
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220213916-647a26b7-f69d-41ed-ae82-916acdfa3eb4.png" width= "500px" />
-</div
+</div>
 
 Na figura acima, você pode notar a presença de canais de comunicação inter-relacionando os módulos do sistema computacional. Tais canais transportam informações envolvendo os dispositivos de E/S (interfaceados via *buffers*: **buffer de dados é uma região de memória física utilizada para armazenar temporariamente os dados enquanto eles estão sendo movidos de um lugar para outro**) além de transportarem dados e instruções entre a memória e o processador. Por sua vez, internamente à CPU são apresentados, além da unidade de execução, registradores de controle.
 A estrutura apresentada na figura anterior permite que o processador desempenhe a sua função básica: executar instruções. Para que uma instrução seja executada, é necessário que esta seja carregada da memória para o processador. Sendo assim, para executar um programa completo, o processador deverá, em suma, realizar a busca da instrução e executá-la – linha a linha de código.
@@ -77,7 +77,7 @@ A figura a seguir ilustra a tradução de um desvio condicional a partir de uma 
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220216558-d29c3cbd-3fb8-4e02-a1c4-745d948dc226.png" width= "500px" />
-</div
+</div>
 
 Na parte (b) da figura acima, tem-se o código traduzido da parte (a) para o assembly de uma máquina hipotética. Suponha que os valores das variáveis (a) e (b) já estejam carregadas nos registradores reg1 e reg2, respectivamente. A linha um realiza a subtração desses dois registradores e armazenando o resultado no registrador reg3. Além do cálculo em si, a instrução de subtração também instancia os campos do registrador de flags. No nosso exemplo, daremos atenção ao campo **S** (sinal). Esse campo será instanciado em um caso a instrução de subtração retorne um valor negativo e, caso contrário, o campo será instanciado em zero.
 
@@ -90,6 +90,7 @@ Cada família de processadores contém, em sua organização, o seu próprio map
 
 ## 3.  Ciclo de Instrução 
 Um ciclo de instrução é o período de tempo no qual um computador lê e processa uma instrução em linguagem de máquina da sua memória ou a sequência de ações que a CPU realiza para executar cada instrução em código de máquina num programa.
+
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220221764-297ca149-158a-4652-a70c-e515bbaedf6a.png" width= "500px" />
