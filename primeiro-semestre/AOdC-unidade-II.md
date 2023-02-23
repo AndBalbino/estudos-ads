@@ -278,7 +278,7 @@ A ULA poderá executar instruções da forma reg op reg (quando os dois operando
 
 </span>
 <div align-"center">
-<img src="(https://user-images.githubusercontent.com/113153237/220801065-8d8bf5ab-7ef2-42bf-ad50-ed64852877d2.png" width= "500px" />
+<img src="https://user-images.githubusercontent.com/113153237/220801065-8d8bf5ab-7ef2-42bf-ad50-ed64852877d2.png" width= "500px" />
 </div>
 
 *Datapath do processador MIPS destacando-se a interface entre unidade de controle e a ALU e o chaveamento no fluxo de dados a ser encaminhado à ALU.Fonte: Adaptada de PATTERSON, 1998, p. 209.*
