@@ -237,6 +237,8 @@ Então, a memória cache, usando os princípios dessas duas localidades, armazen
 ### Mapeamento associativo e direto:
 Convém mencionar que a cache manipula blocos de informações (compostos por vários dados ou várias instruções vizinhas).
 O **modelo de mapeamento** refere-se à **localização do bloco dentro da cache.** No **mapeamento associativo, um bloco não tem uma posição específica dentro da cache, ou seja, poderá estar em qualquer linha endereçável.** 
+No mapeamento direto cada bloco da memória principal é mapeado para uma linha da cache, cada linha da cache possui 3 campos índices ou linha, tag e o endereço da palavra. O *tag* é usado para validar se a linha procurada é a mesma que esta na cache, o *índice* serve como o endereço da cache apontando aonde pode estar a linha procurada, o *endereço da palavra* são os bits menos significativos que indentificam uma palavra dentro de um bloco da memória principal.
+
 No mapeamento associativo, cada bloco da memória principal pode ser carregado em qualquer linha da cache. Com essa estratégia, a cache torna-se mais poderosa, pois permite-se uma maior reutilização das informações armazenadas. Porém o custo por bit é muito dispendioso pelo fato de que, em cada linha, deve ser associado um circuito de comparação. A função desse circuito de comparação consiste em procurar o item solicitado pelo processador comparando-se o endereço requisitado pelo processador com o conteúdo armazenado – **figura abaixo, item (a).**
 
 Para localizar um item solicitado pelo processador, o sistema de gerenciamento da memória cache acompanha o seguinte fluxo:
