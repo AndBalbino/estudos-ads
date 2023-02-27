@@ -11,20 +11,32 @@ Diante da herança frente ao modelo de von Neumann (TANENBAUM, 2013), pode-se di
 - **unidades de E/S (Entrada/Saída):** objetiva o interfaceamento com os dispositivos de entrada e de saída;
 - **rede de interconexão:** tem a função de interconectar os módulos pertencentes ao sistema computacional.
 
-### Memórias do computador
+### Memórias do computador  
+
 
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220212078-f209a234-645e-4fd2-b045-8eeecef05f89.png" width= "500px" />
 </div>
 
-### Hierarquia das memórias 
+### Hierarquia das memórias  
+
 
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/220212854-5b851030-b9eb-4822-ba92-fd76e1fc24ef.png" width= "500px" />
 </div>
 
+### Sistemas de memórias e suas características  
+
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/221450152-8f93a973-beb1-41a3-9175-ac0889285b00.png" width= "500px" />
+</div>  
+  
+    
+    
 Além dos módulos em si, precisamos ter em mente que, para que eles atuem, é necessária toda uma sincronização de trabalho. **Essa sincronização é atingida pela geração de sinais de controle, os quais estão presentes dentro do processador para que este possa executar as instruções, e, também, estão presentes nos demais módulos que integram o computador.**
 
 ### Interconexão do computador, estrutura e função do processador:
