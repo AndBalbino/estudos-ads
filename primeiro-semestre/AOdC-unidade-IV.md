@@ -12,7 +12,8 @@ Basicamente, um módulo de memória poder ser representado na figura abaixo:
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/221997506-9fa2a3bb-8b60-46ef-8c47-3d2f6634f004.png" width= "500px" />
 </div>  
-*Módulo básico de memória. Outros pinos poderão ser encontrados nas implementações reais de memória.Fonte: Elaborada pelo autor, 2018.*
+
+- Módulo básico de memória. Outros pinos poderão ser encontrados nas implementações reais de memória.Fonte: Elaborada pelo autor, 2018.
 
 Na figura acima, temos uma possível pinagem de um módulo de memória. Nesta memória hipotética, podemos encontrar os seguintes pinos:
 
@@ -29,7 +30,9 @@ A figura abaixo, ilustra a concepção básica de uma DRAM e de uma SRAM.
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/221998169-ef1c5662-e0a3-46d6-a3c6-8549ade393d3.png" width= "500px" />
 </div>  
-*Estrutura básica de uma célula de memória. Em (a), tem-se uma célula da DRAM e, em (b), uma configuração básica da SRAM.Fonte: STALLINGS, 2010, p. 130.*
+
+- Estrutura básica de uma célula de memória. Em (a), tem-se uma célula da DRAM e, em (b), uma configuração básica da SRAM.Fonte: STALLINGS, 2010, p. 130. 
+
 Na figura acima, observa-se, em (a), integrando uma célula de memória DRAM, um componente eletrônico denominado “capacitor”. Um capacitor tem a capacidade de armazenar energia temporariamente. No caso da memória, essa carga armazenada é o próprio bit armazenado. Porém, como mencionado, a carga do capacitor é temporária (mesmo que o circuito continue recebendo tensão de alimentação). Esse é o motivo deste tipo de memória ser chamada de dinâmica.
 
 Em função da descarga do capacitor, antes dele perder a referência do bit armazenado, o circuito de memória precisa ser “relembrado” (refresh). De tempos em tempos, ocorre o evento de refresh da memória (o tempo é em função da taxa de refresh). Durante todo o ciclo de refresh, a memória fica bloqueada tanto para operações de escrita, quanto para operações de leitura. Esse bloqueio impacta, de forma negativa, diretamente na performance das operações de memória.
@@ -108,8 +111,43 @@ Há uma diferença entre um canal de E/S (ou processador de E/S) e um controlado
 
 ### Instrução de E/S e processamento de E/S:
 Para que possamos manipular os módulos de E/S devemos, primeiro, saber o modo de manipulação do módulo em específico. Três formas são admitidas: **E/S programada, E/S controlada por interrupções e DMA (Acesso Direto à Memória – Direct Memory Access).** Nos dois primeiros modos, **o processador intermedeia a transferência de informações entre o módulo de E/S e a memória.** Já, no último modo **(DMA), a transferência para a memória é realizada diretamente pelo módulo de E/S.**
+Fluxogramas destes três tipos de manipulação:
 
 </span>
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/222011218-9b2a50f2-a0c7-4b4c-beae-5802984bc394.png" width= "500px" />
 </div>
+
+- Fluxogramas relacionados aos três modos de manipulação dos módulos de E/S: programada, controlada por interrupção e DMA.Fonte: STALLINGS, 2010, p. 130.
+
+Observando a figura acima, você pode perguntar: mas, praticamente não há diferença entre o modo de E/S programada e o modo baseado em interrupção? No fluxograma existe uma sutil diferença, mas, na prática, essa sutil diferença representa uma boa economia de consumo computacional. Para sanar essa dúvida, vamos explicar cada um dos modos.
+
+No primeiro modo, na **E/S programada, há a necessidade de utilizarmos instruções de acesso ao módulo.** Essas instruções variam em função do tipo de mapeamento de adotado pelo computador em questão, ou seja, existem processadores que fazem com que o módulo de E/S seja acessado como se fosse uma posição de memória enquanto outros necessitam de operações especiais tais como: *inport* e *outport* (instruções de C ANSI). Nesta última forma de acesso, os módulos são endereçados como portos de E/S.
+
+Porém, independentemente do tipo de acesso (mapeamento como memória ou porto de E/S), há a necessidade de se verificar, constantemente, o estado do módulo até que ele se encontre pronto para ser operado. Traduzindo essa afirmação em linha de código teremos: "; " 
+
+Nota-se que o laço de repetição é vazio (sem nenhuma instrução a ser realizada). Isso denota a “espera ocupada”, ocupando recurso computacional sem realizar um processamento efetivo.
+
+Para evitar a espera ocupada, pode-se adotar o modelo no qual o módulo de E/S é controlado por interrupção. Neste tipo de modelo, a programação consiste em ativar uma interrupção para que seja acessado o módulo de E/S requerido. A requisição é enfileirada pelo processador de interrupções que a atenderá assim que o dispositivo estiver pronto.
+
+Como essas operações envolvem apenas sinais, não há a necessidade de ter um trecho de código que teste continuamente o estado de dispositivo ocupado. Porém, os dois modos descritos têm o inconveniente de requerer, continuamente, a intervenção do processador para proceder a transferência de informações entre a memória e o módulo de E/S. Essa necessidade é eliminada quando é utilizado o modo DMA.
+
+No modo **DMA, retira-se a responsabilidade de gerenciar a transferência das informações entre o módulo de E/S e a memória. Neste caso, há somente a intervenção do processador para configurar o controlador de DMA e, depois, somente quando recebe, do controlador de DMA, o sinal indicando a finalização da transferência.**
+A figura a seguir ilustra um módulo básico de DMA.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/222013186-7ed939d1-6c24-4888-9f9d-ad51fa542411.png" width= "500px" />
+</div>
+
+- Módulo básico de DMA. Nota-se a presença das linhas de dados, de endereço e de controle (divididas em linhas específicas para a lógica de controle).Fonte: STALLINGS, 2010, p. 192. 
+
+Na figura acima, temos as linhas de dados sendo utilizadas em dois momentos distintos: na configuração do DMA e na transferência efetiva das informações. Na etapa de configuração, o processador envia, para o DMA, a quantidade de bytes a ser transferida, o endereço inicial da fonte das informações e do destino na memória principal. Após este momento, durante o decurso da transferência, as vias servirão para o transporte efetivo das informações (os dados são disponibilizados pelo DMA pelo registrador de dados).
+
+As **linhas de endereço serão utilizadas, também, no momento da transferência, de modo que o sistema de memória possa receber a localização na qual escreverá os dados transferidos.**
+
+Em relação aos **sinais de controle, destacam-se aqueles relacionados à interrupção, pois o DMA também é baseado na utilização de interrupções para o seu funcionamento e interfaceamento com o processador.** Interrupções que ocorrem durante a reivindicação do processador ao controlador do DMA e, também, no momento do término de transferência – para que o DMA possa sinalizar para o processador.
+
+Todos esses modos e técnicas precisarão ser lembrados no momento em que você tiver a necessidade de implementar, quando necessário, métodos de acesso aos dispositivos de E/S – seja utilizando interfaces padrões como USB, FireWire e InfiniBand, ou algum outro dispositivo implementado para uma finalidade bem específica.
+
+## 3. Evolução dos computadores RISC/CISC
