@@ -151,3 +151,145 @@ Em relação aos **sinais de controle, destacam-se aqueles relacionados à inter
 Todos esses modos e técnicas precisarão ser lembrados no momento em que você tiver a necessidade de implementar, quando necessário, métodos de acesso aos dispositivos de E/S – seja utilizando interfaces padrões como USB, FireWire e InfiniBand, ou algum outro dispositivo implementado para uma finalidade bem específica.
 
 ## 3. Evolução dos computadores RISC/CISC
+Os processadores podem ser classificados em relação à arquitetura e à organização. Esses dois modos de abstração possuem um elemento em comum: o seu conjunto de instruções.
+
+O projeto do conjunto de instruções permite definir um processador como sendo CISC (Complex Instruction Set Computer, em português, Computador com Conjunto de Instruções Complexas) ou RISC (Reduced Instruction Set Computer, em português, Computador com Conjunto de Instruções Reduzidas), o que impacta diretamente sua organização como por exemplo, a estrutura de seu pipeline.
+
+Alguns pontos são primordiais na diferenciação dos computadores baseados na metodologia CISC, ou RISC. Dentre os quais, podemos mencionar, em relação ao RISC (STALLINGS, 2010):
+
+- banco de registradores envolvendo um número maior de GPRs (General Purpose Registers, em português, Registradores de Propósito Geral). A quantidade maior de registradores permite uma maior otimização de seu uso, seja pela maior probabilidade de reaproveitamento de valores previamente carregados, ou seja, pela possibilidade de usar o renomeamento de registradores em caso de hazards de dados;
+- **conjunto de instruções simples:** as instruções de uma máquina RISC são simples. Sendo simples, pode-se aproveitar melhor os conceitos inerentes ao sistema de pipeline;
+- **otimização de pipeline:** devido às próprias características das instruções, o pipeline pode ter sua otimização feita de forma mais agressiva;
+
+### Características da execução das instruções: 
+Como mencionado, uma das características do modelo RISC é o fato de seu conjunto de instruções contemplar instruções mais simples (reduzidas). Para que a concepção do processador RISC fosse idealizada, alguns levantamentos foram feitos para que a ISA (Instruction Set Architecture, em português, Arquitetura de Conjunto de Instruções ) fosse projetada. Tais levantamentos referiram-se a:
+
+- **frequência de uso das operações:** o índice permitiu consolidar quais operações necessitariam mais otimizações e como ficaria o relacionamento do processador com o sistema de memória. O referido índice permitiu, também, estudos sobre o emprego de superescalaridade nos processadores RISC;
+- **frequência de uso dos operandos:** essa métrica permitiu que o sistema de memória fosse projetado, incluindo a estimativa de tamanho e os mecanismos associados ao banco de registradores e memória cache;
+- **sequência de execução das instruções:** a análise da sequência permitiu um estudo mais aprofundado da estrutura do pipeline.
+
+Os levantamentos citados acima foram essenciais, não somente para a concepção do conjunto de instruções do processador RISC mas, também, para otimizações do pipeline e do sistema de memória (em relação ao banco de registradores e memória cache). Resumindo, podemos falar que pipeline e o sistema de banco de registradores são os elementos que mais contribuem com a performance dos processadores RISC.
+
+Falando em banco de registradores, convém lembrar que, quanto mais se consegue reaproveitar as informações previamente nos registradores, melhor será o desempenho do processador pois atenua-se o número de acessos ao sistema de memória. Para permitir uma otimização, existem duas abordagens uma baseada em **software** e outra baseada em **hardware**.
+
+Na abordagem de **software, há a necessidade do compilador realizar uma análise do programa, de modo que os registradores sejam usados mais massivamente, armazenando as variáveis que serão mais utilizadas.**
+
+Um exemplo de abordagem de hardware consiste na utilização de janelas de registradores. Para explicarmos sobre janelas de registradores, vamos imaginar a estrutura de um programa diferenciando as variáveis locais e globais. Imaginemos, também, passagem de parâmetros, quando uma função evoca outra. Para continuarmos na explanação, vamos supor, ainda, que o programa possui quatro funções (procedimentos) que serão chamadas sequencialmente, ou seja, função (A) evoca função (B), que evoca a função (C), e assim por diante. A figura abaixo ilustra a janela de registradores envolvendo essas quatro funções.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/222290853-c1c6dbbc-b882-4bc9-918e-c016dc0ecb56.png" width= "500px" />
+</div>
+
+- Exemplo de janelas de registradores sendo usadas por quatro funções aninhadas. A função A passa parâmetros para a função B, e assim por diante.Fonte: STALLINGS, 2010, p. 402.
+
+Na figura acima vemos a alocação de uma janela para cada função. Na medida em que as funções vão sendo chamadas, ocorre a alocação de uma janela (de forma sequencial) para que possam ser armazenadas as variáveis locais de cada função. A transição das janelas é usada para armazenar os valores relativos aos parâmetros passados de uma função para outra.
+
+No momento do retorno, na finalização de uma função, a janela ativa volta a ser a antecessora. Dessa forma, as variáveis não são perdidas e, consequentemente, não precisam ser buscadas, novamente, junto à memória.
+
+No caso das janelas de registradores, algumas perguntas que podem surgir.
+
+- E se tivermos muitas chamadas aninhadas de funções e chegarmos ao limite do número de janelas? O que acontece com as variáveis que estavam armazenadas, relativas às funções mais antigas? Neste caso, há o uso da memória cache para armazenar as variáveis mais antigas.
+
+- O uso das janelas de registradores não é ineficiente, pois vários registradores poderão ficar ociosos? Para responder a esta pergunta, vamos comparar com a cache. A cache manipula blocos de informações. Em alguns (ou vários) momentos, será necessário manipular apenas uma variável dentro do bloco, ou seja, todas as demais informações serão carregadas “à toa”. Então, poderemos ter uma ociosidade de uso na cache. Na janela de registradores, a unidade de manipulação é a própria variável (e não blocos) podendo ter registradores não alocados. De uma forma ou de outra (nas janelas de registradores ou na cache) temos ociosidade, ou de registradores não alocados, ou de itens carregados na cache e não utilizados.
+
+As janelas de registradores atuam como um buffer circular, no qual as janelas podem ser sobrepostas. Diante disso, a otimização de uso se faz com base nas características encontradas nas linguagens de alto nível, ou seja, o uso frequente de chamadas de procedimentos. Por conclusão, é por esse motivo que os levantamentos descritos no início dessa seção foram essenciais para o desenvolvimento da concepção da ideia que envolve os processadores RISC.
+
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/222292832-7963fbf0-77d5-46ba-91c4-5b2053983d7b.jpg" width= "500px" />
+</div>
+
+
+### Instruções reduzidas: 
+Máquinas RISC tem como principal característica, o fato de possuírem, em sua implementação, instruções reduzidas. Instrução reduzida significa instrução simples, otimizada. Temos quatro características básicas de uma instrução reduzida: 
+
+- o tempo de execução de uma instrução corresponde a um ciclo de máquina. Ciclo de máquina representa o tempo necessário para o acesso e coleta de informações, junto aos registradores, executar uma operação e escrever o resultado junto ao banco de registradores;
+- as operações são do tipo registrador-registrador, ou seja, não existem instruções que misturem registrador-memória, exceto aquelas de carga e escritas na memória;
+os modos de endereçamento são simples, não possuindo, por exemplo, endereçamento indireto;
+- utilização de formatos simples de instruções é essencial para se projetar unidades de controle mais simples, nas quais o processo de decodificação e busca dos operandos, torna-se mais ágil, em função da menor complexidade do hardware.  
+
+Todas essas características do RISC permitem que o pipeline também seja otimizado, assim como as interfaces internas e externas do processador. Isso favorece a simplicidade do circuito como um todo, pois são necessários, por exemplo, menos elementos de roteamento interno de informações. Como exemplo de processadores RISC, podemos citar: SPARC, MIPS R4000 e micro-RISC e ARM.
+
+Processadores que adotam padrão RISC são mais empregados em sistemas embarcados e aplicações industriais e em tempo real, pois são mais deterministas em relação ao tempo de processamento das instruções.
+
+## 4. Máquinas escalares e superescalares
+
+Quando se fala em pipeline, uma das maiores preocupações é tentar mantê-lo cheio, para obter a máxima vazão (throughput) de processamento das instruções. Em máquinas escalares, que carregam a possibilidade de executar apenas uma instrução por vez, o pipeline pode não ser atendido plenamente, devido aos conflitos e dependências (hazards) de dados, estrutural, ou de controle.
+
+**Throughput:** Taxa em que os dados são transmitidos. Ele também pode ser definido como a quantidade de dados movidos com êxito de um lugar para outro em um determinado período. A taxa de transferência é medida em bits por segundo (bps).
+
+Para se resolver esse problema, devemos ter mecanismos que possam antecipar instruções que estejam aptas a serem executadas, invertendo a ordem daquelas que devem esperar para que alguma dependência seja resolvida. Essa técnica é chamada execução fora de ordem e, para se conseguir, devemos adotar mecanismos que permitam o paralelismo em nível de instruções (ILP – Instruction Level Parallelism).
+
+**Execução fora de ordem:** A Execução Fora-de-ordem permite que uma instrução pronta para ser processada seja executada antes mas não tem os operandos prontos, em seguida, re-ordens os resultados para fazer parecer que tudo aconteceu na ordem programada. Esta técnica também é usada para evitar outras “bolhas”, como uma instrução aguardando um resultado de uma operação de ponto flutuante de longa latência ou outras operações multi-ciclo.
+
+**ILP:** O paralelismo em nível de instrução é, basicamente, o recurso que os computadores possuem para executar várias atividades (instruções) de forma paralela. Há algumas técnicas de implementação do paralelismo de instrução como: pipeline, arquitetura superescalar, superpipeline.
+Execução paralela ou simultânea de uma sequência de instruções em um programa de computador. Mais especificamente, o ILP refere-se ao número médio de instruções executadas por etapa dessa execução paralela.
+
+Uma das técnicas existentes para se chegar ao **ILP** é a adoção da superescalaridade. Superficialmente falando, superescalaridade consiste na replicação das unidades funcionais.
+
+### Características:
+A motivação principal para o desenvolvimento de arquiteturas superescalares consiste na possibilidade de se executar instruções de forma paralela. Para tanto, são replicadas unidades funcionais, sendo que, cada uma, apresenta o seu próprio pipeline.
+
+A figura abaixo, ilustra uma implementação de um processador superescalar típico.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/222299360-026df03f-cabb-4bb2-afb6-f52bf295900d.png" width= "500px" />
+</div>
+
+- Estrutura de um processador superescalar típico. Nota-se a presença de unidades funcionais replicadas.Fonte: STALLINGS, 2010, p. 430.
+
+Como podemos perceber na figura acima, a existência de unidades funcionais replicadas dotadas de pipeline, faz com que haja a possibilidade de se executar instruções independentes de forma paralela, o chamado ILP.
+
+Sabemos que o ILP permite a execução fora de ordem. Mas, detectar as dependências de forma que possa “pular” instruções impossibilitadas de serem executadas? Como fazer com que as dependências sejam eliminadas, em alguns casos?
+
+Para responder às questões acima, vamos citar alguns mecanismos adotados pelos processadores atuais.
+
+O primeiro mecanismo que podemos mencionar consiste na separação dos bancos de registradores. Como podemos ver na figura anterior, há a separação do banco de registradores para atender as operações que envolvem dados inteiros e as que envolvem dados de ponto flutuante. Essa abordagem já atenua a frequência de hazards estruturais, devido à possibilidade de dois acessos simultâneos aos registradores.
+
+Dependências de controle podem ser atenuadas com a previsão de desvio. Ao se deparar com uma instrução de desvio, o processador tenta prever qual será a próxima instrução: a que inicia o bloco do desvio tomado, ou a que inicia o bloco do desvio não tomado? Para tentar manter a eficiência computacional, ele toma uma decisão com base no histórico do processamento. Caso a decisão seja acertada, a instrução é efetivada. Caso contrário, descarta-se os resultados obtidos pelas instruções executadas erroneamente.
+
+Para encaminhar as instruções para as unidades funcionais, adota-se a emissão múltipla de instruções. A unidade de despacho é capaz de coletar um bloco de instruções e armazená-las em um buffer, chamado de janela de execução.
+
+Após uma decodificação e análise de dependências, as instruções contidas na janela de execução são direcionadas aos módulos funcionais correspondentes. Como a emissão, nos processadores superescalares pode ser realizada fora de ordem, há a necessidade de efetivar os resultados respeitando-se a ordem original de forma que os resultados sejam ordenados.
+
+Os resultados podem ser efetivados pela ação do evento de conclusão (commit) ou refutados – no caso, por exemplo, daquelas envolvidas em instruções de desvios tomados erroneamente pela previsão de desvios.
+
+Por fim, no caso de conflitos em relação à geração de valores, pode-se adotar o renomeamento de registradores (HENNESSY; PATTERSON, 2014). Para tanto, vamos supor o seguinte código:
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/222299953-b7d69d53-2f14-4751-a260-190e80089015.png" width= "500px" />
+</div>
+
+No código acima, podemos notar a presença de alguns conflitos e dependências. A linha (ii) depende o resultado obtido na linha (i). Por sua vez, a linha (iv) depende de (iii). Mas, como as instruções poderão ser despachadas simultaneamente, ou com uma defasagem mínima de tempo, devemos considerar que, como a operação da linha (i) é uma divisão, ela demorará mais tempo a ser executada em relação às demais. E se ela finalizar a produção de “a”, logo após a geração de “a” pela linha (iii), qual o valor a ser usado na linha (iv): o “a” obtido da linha (i), ou o da linha (iii)?
+
+Para evitar essa dúvida, usa-se, como alternativa, o renomeamento de registradores. No caso específico, troca-se o registrador "", da linha (iii), e todos os subsequentes, por outro registrador. No exemplo adotado, ficaria: 
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/222300198-27fc1229-a795-4e67-bc29-961a314d2ef1.png" width= "500px" />
+</div>
+
+Com o renomeamento, este tipo conflito é eliminado, porém aumenta-se a complexidade do processador pelo fato de ter a necessidade de possuir uma tabela que fizesse o relacionamento entre a referência original do registrador e o resultado do renomeamento.
+
+### Tendências:
+estamos em uma ascensão em relação ao uso de paralelismo nos computadores. Historicamente, tivemos como ponto de partida, a introdução do pipeline, que representa um pseudoparalelismo. Na sequência, houve a incorporação da superescalaridade, adicionando, de fato, o paralelismo para dentro dos processadores.
+
+Porém, a tendência é que não fiquemos limitados ao paralelismo em nível de instrução, mas, sim, que possamos ampliar o paralelismo em nível de threads e de núcleos.
+
+**Threads:** A thread que recebe e executa todas as instruções, como uma ordem do que será feito por vez. É como um subsistema dentro do processador, onde os processos irão se dividir em duas ou mais tarefas. Essas tarefas são as threads ou linhas de execução. 
+
+No paralelismo em nível de threads, o processador tem condições de escalonar threads na ocorrência de conflitos no pipeline. Tratando-se de um escalonamento em nível de hardware, torna-se muito mais eficiente, se compararmos com o escalonamento realizado pelo sistema operacional (LEME, 2016).
+
+Por sua vez, o paralelismo em nível de núcleos, incorpora a ideia das máquinas multiprocessadores. Os vários processadores foram transformados em núcleos – cada núcleo independente, com suas estruturas de controle e memória cache L1.
+
+Não devemos deixar de destacar a volta da ênfase aos processadores vetoriais. Uma arquitetura vetorial consiste em um modelo paralelo, dotado de pipeline, do tipo SIMD (Single Instruction, Multiple Data, em português, Instrução Única, Múltiplos Dados).
+
+Neste modelo, vários dados são executados por uma única instrução. Como exemplo, podemos falar das GPUs (Graphics Processing Unit, em português, Unidade de Processamento Gráfico), no qual os dados a serem processados são representados por vetores e as instruções são otimizadas para esse tipo de manipulação. 
+
+
+
+
