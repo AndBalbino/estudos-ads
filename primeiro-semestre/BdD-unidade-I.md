@@ -208,7 +208,8 @@ A gerência, a existência de empregados associados aos departamentos e o contro
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/223582540-70a2b5c2-ef36-481c-8d8d-effa9953d6a3.jpeg" width= "750px" />
 </div>   
---  
+
+
 O **grau** de um tipo relacionamento é o número de tipos entidade participantes do relacionamento: 
 - Binário (ou de grau dois);
 - Ternário (ou de grau três);
