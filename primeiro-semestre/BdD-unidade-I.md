@@ -243,6 +243,57 @@ No diagrama ER a participação total é representada por uma **linha dupla** qu
 <img src="https://user-images.githubusercontent.com/113153237/223589095-9cd9a9db-c7ee-40d3-ad49-a08f311be05c.jpeg" width= "750px" />
 </div>   
 
+## 3. Modelo Entidade-Relacionamento estendido (Especialização-generalização e agregação)
+Modelo de dados conceitual mais acurado, capaz de expressar propriedades e restrições dos dados com maior precisão.
 
+#### Características
+- Especialização-generalização;
+- Agregação;
+
+**Especialização:** Processo de definir um conjunto de subtipos(ou subclasses) de um tipo entidade (supertipo ou superclasse), a partir das características que distiguem subconjuntos de entidades individuais.
+**Generalização:** Processo inverso da abstração, no qual as diferenças entre vários tipos entidades são suprimidas na criação de um supertipo. Quanto já temos subtipos estabelecidos e entendemos que precisamos criar um supertipo para descrever melhor a situação que está sendo modelada.  
+**Agregação:** É uuma abstração que pérmite a construção de objetos a partir de seus componentes. 
+- **Obs:** No MER estendido podemos agregar (combinar) objetos que estão relacionados. A partir dessa agregação, criamos um novo objeto que pode ser tomado como uma entidade de alto nível e pode, portanto, participar de um relacionamento.
+ 
+### Especialização: 
+
+- **Restrição de disjunção:** Significa que determinada entidade só pode se especificar em uma única subcategoria de forma exclusiva. 
+-  
+ </span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/223862883-b9146438-841b-4a44-828f-d88fa45b7a79.jpeg" width= "750px" />
+</div>   
+     
+ </span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/223864417-9eb3e4de-3377-4b57-8dae-fd3d86a9d0b1.jpeg" width= "750px" />
+</div>   
+
+### Generalização: 
+
+- **Restrição de sobreposição (overlap):** As subclasses não tem restrição de disjunção, ou seja, podem ser sobrepostas. Uma entidade pode ser membro de mais de uma subclasse da especialização.
+
+ </span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/223865315-e4ff5137-b8f2-4d2f-880b-ca4a816d4786.jpeg" width= "750px" />
+</div>   
+  
+ </span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/223865453-b0107214-2cec-4390-9604-ea24ff5d7505.jpeg" width= "750px" />
+</div>  
+
+
+### Agregação: 
+
+ </span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/223867869-d79e298a-f437-44d1-991e-06e891b66cfc.jpeg" width= "750px" />
+</div> 
+_______________________________________________________________________________________________________________________________________________________
+    
+      
+Link útil: 
+[Banco de dados, o que é, os tipos e a importância para o site da sua empresa](https://rockcontent.com/br/blog/banco-de-dados/) 
 
 
