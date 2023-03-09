@@ -100,3 +100,48 @@ O valor de uma chave primária não pode ser NULL.
 É especificada entre duas relações e usada para manter a consistência entre as suas tuplas.
 - Uma tupla de uma relação **A** que referencia uma relação **B** deve fazer a referência a uma **tupla existente** na relação **B.**
 
+## 2. Mapeamento MER -> Relacional 
+**Mapeamento:** Uma forma de projetar um esquema de um banco de dados relacional (um projeto lógico) tendo como base o esquema de um projeto conceitual.
+- A maneira clássica de desenvolvimento de um banco de dados é por meio da construção de um modelo conceitual - independente de SGBD - o qual é posteriormente convertido, ou mapeado, para um projeto lógico que seja implementável no SGBD escolhido para desenvolvimento do sistema de banco de dados.
+
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/223287629-bc06cc2b-86b2-4564-92b9-992e5e1ac900.jpeg" width= "750px" />
+</div>
+
+Ao implementar o projeto lógico no SGBD teremos **garantidas** algumas **restrições** que devem ser impostas aos dados.   
+ 
+**Exemplo:**
+- Restrições de **domínio**
+- Restrições de **chave**
+- Restrições de **integridade referencial** (chave estrangeira)   
+  
+Para que essas restrições sejam mantidas na nossa aplicação da maneira que atende aos requisitos de dados que levantamos na coleta de dados, precisamos ter certeza de que o projeto lógico está bem estabelecido, então fazer o projeto conceitual com cuidado e mapea-lo para o projeto lógico é uma boa alternativa para tentar garantir a qualidade do nosso projeto e a qualidade dos dados.
+
+### Mapeamento tipos entidade forte (ou regulares) 
+- Para cada tipo de entidade forte em um MER é criada uma relação ou modelo Relacional;
+- Essa relação inclui todos os atributos simples, e os componentes simples dos atributos compostos, do tipo entidade forte; 
+- Um atributo chave da entidade é escolhido como chave primária para a relação recém criada. 
+
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224177936-642bba87-a9a9-4d3a-abfb-33169bc661f7.jpeg" width= "750px" />
+</div>
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224178347-33ee3f26-d653-4e6a-a32e-70bef2d0de68.jpeg" width= "750px" />
+</div>
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224178478-2d827a44-bd6f-4675-9b22-a2bd84550f33.jpeg" width= "750px" />
+</div>
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224178556-da6be3d9-b44c-4a0d-9f85-a767a2f54ca8.jpeg" width= "750px" />
+</div>
+
