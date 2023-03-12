@@ -626,6 +626,50 @@ Converte cada especialização com *m* subclasses {S1, S2, ..., Sn} e a supercla
 - E é **recomendada** para especializações com **restrição de disjunção**. Se a individual pode suplicada em várias relações.
 
 
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224571508-3dac150b-ad17-4f65-a89e-d67d582238eb.jpeg" width= "750px" />
+</div>
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224571527-1914f8a7-0ccd-48a7-b79a-eb58af839820.jpeg" width= "750px" />
+</div>
+
+##
+
+#### 3. Relação única com um único atributo *tipo*; 
+- Crie uma única relação L com os atributos Atrb(L) = {k, a1, ..., an} U(nidos) {atributos de S1} U ... U {atributos de Sm} U {t} e PK {L} = k. 
+- O atributo t é chamado atributo *tipo* (ou discriminador) e seu valor indica a subclasse à qual cada tupla pertence, se ela pertencer a alguma subclasse. 
+- Esta opção funciona somente para especializações cujas subclasses são **disjuntas**.
+- Esta opção pode gerar muitos valores **NULL** se as subclasses tiverem muitos atributos especifícos.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224571919-2e3a502d-e511-4f97-9b40-9175b31927f9.jpeg" width= "750px" />
+</div>
+
+#### 4. Relação única com vários atributos *tipo*; 
+- Crie uma única relação L com os atributos Atrb(L) = {k, a1, ..., an} U(nidos) {atributos de S1} U ... U {atributos de Sm} U {t1, t2, ..., tm} e PK(L) = k.
+- Cada ti, 1 <= i <= m, é um atributo do tipo booleano que indica se uma tupla pertence a uma subclasse Si.
+- Esta opção é usada para uma especialização com restrição de **sobreposição**.
+- Ela também funciona para a restrição de **disjunção**.
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224572432-59ba1590-bef7-47d8-a320-601bde9a35e2.jpeg" width= "750px" />
+</div>
+
+</span>
+<div align-"center">
+<img src="https://user-images.githubusercontent.com/113153237/224572468-a204da91-6c69-4fc7-857b-c5d8ffda9d73.jpeg" width= "750px" />
+</div>
+
+## 
+
+#### Mapeando agregações:
+- Valem as mesmas regras.
+- Porém, ao mapear o tipo relacionamento do qual a abstração de agregação participa, usualmente, cria-se uma nova relação que recebe uma chave primária adequada proveniente do mapeamento obtido para o conteúdo da agregação e a chave primária do outro tipo entidade participante do relacionamento.
 
 _______________________________________________________________________________________________________________________________________________________
     
