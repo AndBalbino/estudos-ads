@@ -30,6 +30,7 @@ Diante desse cenário, quais são os produtos finais da modelagem? Uma primeira 
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224854706-976f3da4-0870-4b08-9fbe-64991cc3cc54.png" width= "750px" />
 </div>
+
 *Modelo de Entidade e Relacionamento do Sistema de Compras
 Fonte: Elaborada pelo autor.*
 
@@ -67,6 +68,7 @@ Modelagem e diagrama são dois conceitos intimamente relacionados: a **modelagem
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224855973-d84e45a0-83b2-4d0d-b699-7aae41546c3d.png" width= "750px" />
 </div>
+
 *Exemplo de parte de um diagrama de entidade e relacionamento
 Fonte: Elaborada pelo autor.*
 
@@ -82,6 +84,7 @@ A visão de como representar o cenário pode ter algumas variações de projetis
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224856798-6648ba13-18cb-4953-869b-1c384eed02bf.png" width= "750px" />
 </div>
+
 *Versão inicial de um DER para o cenário de exemplo (Loja Virtual)
 Fonte: Elaborada pelo autor.*
 
@@ -103,6 +106,7 @@ No autorrelacionamento, há um relacionamento de uma entidade para ela mesma. Po
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224857433-60191fe9-ae9c-4e72-8308-6564db8f8418.png" width= "750px" />
 </div>
+
 *Exemplo de autorrelacionamento*  
 
 A **generalização ocorre quando uma entidade engloba características de outras entidades subjacentes.** A entidade mais “alta” generaliza os conceitos subjacentes. Um exemplo típico de uma entidade Pessoa, em um sistema, pode ser uma Pessoa Física ou uma Pessoa Jurídica, ou uma determinada entidade Usuário, que pode ser um Funcionário, um Professor ou um Estudante, em uma biblioteca da universidade. No caso, o conceito Pessoa é mais geral, generaliza os conceitos de Pessoa Física e Pessoa Jurídica. Da mesma forma todo Funcionário, Professor e Estudante são um Usuário da biblioteca da universidade. Portanto, Usuário generaliza os outros elementos. Um exemplo de generalização: 
@@ -111,6 +115,7 @@ A **generalização ocorre quando uma entidade engloba características de outra
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224857701-d7ccd8b1-dd0e-4cef-a492-1a93a8e2fe71.png" width= "750px" />
 </div>
+
 *Exemplo de relacionamento de generalização*
 
 Uma entidade fraca é uma entidade cuja existência depende da existência de outra entidade, no caso, uma entidade forte. Para exemplificar, imagine que um sistema de Recursos Humanos precisa ter uma entidade de Dependentes. A existência de um dependente só faz sentido se estiver vinculada a um elemento da entidade Funcionário. Em geral, a identificação da entidade fraca depende de um atributo identificador da entidade forte. Em dependente, para ser identificado, ele poderia ter um número, juntamente com a identificação do funcionário, isto é, a tupla Identificação do Funcionário e número do dependente identifica o Dependente.
@@ -119,6 +124,7 @@ Uma entidade fraca é uma entidade cuja existência depende da existência de ou
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224857965-5a86f64c-d150-46fa-a0ee-6ba5e5c63f76.png" width= "750px" />
 </div>
+
 *Exemplo de relacionamento entre entidade forte e entidade fraca
 Fonte: Elaborada pelo autor.*
 
@@ -158,6 +164,7 @@ Um exemplo pode nos ajudar a compreender melhor essa conversão, e vamos relembr
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224860332-6172b9d2-37f5-4b9e-90c3-a0116918197e.png" width= "750px" />
 </div>
+
 *Transposição de chave estrangeira em relacionamento 1:N
 Fonte: Elaborada pelo autor.* 
 
@@ -167,6 +174,7 @@ Assim como há esse tratamento no relacionamento 1:N, os outros tipos precisam t
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224860563-b7ef855f-bbee-4a6e-89db-df9acdbe68ba.png" width= "750px" />
 </div>
+
 *Conversão de relação N:N em tabela associativa
 Fonte: Elaborada pelo autor.*
 
@@ -176,6 +184,7 @@ Os outros relacionamentos também apresentam uma forma de conversão para sua ve
 <div align-"center">
 <img src="https://user-images.githubusercontent.com/113153237/224860777-04ba6eb3-ef54-40a1-9ae5-42d88cc46f93.png" width= "750px" />
 </div>
+
 *Descrição da forma de determinar as chaves estrangeiras nos relacionamentos
 Fonte: Elaborada pelo autor.*
 
